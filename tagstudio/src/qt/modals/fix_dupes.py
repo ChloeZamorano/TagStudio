@@ -37,6 +37,7 @@ class FixDupeFilesModal(QWidget):
         self.setMinimumSize(400, 300)
         self.root_layout = QVBoxLayout(self)
         self.root_layout.setContentsMargins(6, 6, 6, 6)
+        self.setWindowFlags(Qt.Dialog)
 
         self.desc_widget = QLabel()
         self.desc_widget.setObjectName("descriptionLabel")
