@@ -7,7 +7,7 @@ import logging
 import typing
 
 from PySide6.QtCore import Qt, QThreadPool
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout, QLabel, QPushButton
+from PySide6.QtWidgets import QWidget, QDialog, QVBoxLayout, QHBoxLayout, QLabel, QPushButton
 
 from src.core.library import Library
 from src.qt.helpers.function_iterator import FunctionIterator
@@ -29,7 +29,7 @@ INFO = "[INFO]"
 logging.basicConfig(format="%(message)s", level=logging.INFO)
 
 
-class FixUnlinkedEntriesModal(QWidget):
+class FixUnlinkedEntriesModal(QDialog):
     def __init__(self, library: "Library", driver: "QtDriver"):
         super().__init__()
         self.lib = library
@@ -41,7 +41,6 @@ class FixUnlinkedEntriesModal(QWidget):
         self.setMinimumSize(400, 300)
         self.root_layout = QVBoxLayout(self)
         self.root_layout.setContentsMargins(6, 6, 6, 6)
-        self.setWindowFlags(Qt.Dialog)
 
         self.unlinked_desc_widget = QLabel()
         self.unlinked_desc_widget.setObjectName("unlinkedDescriptionLabel")

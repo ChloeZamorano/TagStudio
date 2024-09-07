@@ -9,6 +9,7 @@ import typing
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QWidget,
+    QDialog,
     QVBoxLayout,
     QHBoxLayout,
     QLabel,
@@ -24,7 +25,7 @@ if typing.TYPE_CHECKING:
     from src.qt.ts_qt import QtDriver
 
 
-class FixDupeFilesModal(QWidget):
+class FixDupeFilesModal(QDialog):
     # done = Signal(int)
     def __init__(self, library: "Library", driver: "QtDriver"):
         super().__init__()
@@ -37,7 +38,6 @@ class FixDupeFilesModal(QWidget):
         self.setMinimumSize(400, 300)
         self.root_layout = QVBoxLayout(self)
         self.root_layout.setContentsMargins(6, 6, 6, 6)
-        self.setWindowFlags(Qt.Dialog)
 
         self.desc_widget = QLabel()
         self.desc_widget.setObjectName("descriptionLabel")

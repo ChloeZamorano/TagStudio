@@ -8,6 +8,7 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
     QHBoxLayout,
     QWidget,
+    QDialog,
     QPushButton,
     QTableWidget,
     QTableWidgetItem,
@@ -41,7 +42,6 @@ class FileExtensionModal(PanelWidget):
         self.setMinimumSize(240, 400)
         self.root_layout = QVBoxLayout(self)
         self.root_layout.setContentsMargins(6, 6, 6, 6)
-        self.setWindowFlags(Qt.Dialog)
 
         # Create Table Widget --------------------------------------------------
         self.table = QTableWidget(len(self.lib.ext_list), 1)

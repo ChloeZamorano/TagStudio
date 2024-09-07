@@ -10,6 +10,7 @@ import typing
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import (
     QWidget,
+    QDialog,
     QVBoxLayout,
     QHBoxLayout,
     QLabel,
@@ -157,7 +158,7 @@ def generate_preview_data(library: Library):
     return tree
 
 
-class FoldersToTagsModal(QWidget):
+class FoldersToTagsModal(QDialog):
     # done = Signal(int)
     def __init__(self, library: "Library", driver: "QtDriver"):
         super().__init__()
@@ -171,7 +172,6 @@ class FoldersToTagsModal(QWidget):
         self.setMinimumSize(640, 640)
         self.root_layout = QVBoxLayout(self)
         self.root_layout.setContentsMargins(6, 6, 6, 6)
-        self.setWindowFlags(Qt.Dialog)
 
         self.title_widget = QLabel()
         self.title_widget.setObjectName("title")

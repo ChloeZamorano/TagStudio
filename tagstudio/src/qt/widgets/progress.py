@@ -6,10 +6,10 @@
 from typing import Optional
 
 from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QProgressDialog
+from PySide6.QtWidgets import QWidget, QDialog, QVBoxLayout, QProgressDialog
 
 
-class ProgressWidget(QWidget):
+class ProgressWidget(QDialog):
     """Prebuilt thread-safe progress bar widget."""
 
     def __init__(
@@ -35,7 +35,6 @@ class ProgressWidget(QWidget):
         )
         self.setWindowTitle(window_title)
         self.setWindowModality(Qt.WindowModality.ApplicationModal)
-        self.setWindowFlags(Qt.Dialog)
 
     def update_label(self, text: str):
         self.pb.setLabelText(text)

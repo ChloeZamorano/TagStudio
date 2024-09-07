@@ -8,6 +8,7 @@ from PySide6.QtCore import Signal, Qt, QThreadPool
 from PySide6.QtGui import QStandardItemModel, QStandardItem
 from PySide6.QtWidgets import (
     QWidget,
+    QDialog,
     QVBoxLayout,
     QHBoxLayout,
     QLabel,
@@ -25,7 +26,7 @@ if typing.TYPE_CHECKING:
     from src.qt.ts_qt import QtDriver
 
 
-class DeleteUnlinkedEntriesModal(QWidget):
+class DeleteUnlinkedEntriesModal(QDialog):
     done = Signal()
 
     def __init__(self, library: "Library", driver: "QtDriver"):
@@ -37,7 +38,6 @@ class DeleteUnlinkedEntriesModal(QWidget):
         self.setMinimumSize(500, 400)
         self.root_layout = QVBoxLayout(self)
         self.root_layout.setContentsMargins(6, 6, 6, 6)
-        self.setWindowFlags(Qt.Dialog)
 
         self.desc_widget = QLabel()
         self.desc_widget.setObjectName("descriptionLabel")
