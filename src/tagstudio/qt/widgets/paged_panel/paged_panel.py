@@ -26,6 +26,7 @@ class PagedPanel(QWidget):
 
         self.setMinimumSize(*size)
         self.setWindowModality(Qt.WindowModality.ApplicationModal)
+        self.setWindowFlag(Qt.Dialog, on = True) # type: ignore
 
         self.root_layout = QVBoxLayout(self)
         self.root_layout.setObjectName("baseLayout")

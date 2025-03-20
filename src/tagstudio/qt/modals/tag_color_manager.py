@@ -47,6 +47,7 @@ class TagColorManager(QWidget):
         self.lib = driver.lib
         self.setWindowTitle(Translations["color_manager.title"])
         self.setWindowModality(Qt.WindowModality.ApplicationModal)
+        self.setWindowFlag(Qt.Dialog, on = True) # type: ignore
         self.setMinimumSize(800, 600)
         self.is_initialized = False
         self.root_layout = QVBoxLayout(self)

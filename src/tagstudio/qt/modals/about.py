@@ -47,6 +47,7 @@ class AboutModal(QWidget):
         )
 
         self.setWindowModality(Qt.WindowModality.ApplicationModal)
+        self.setWindowFlag(Qt.Dialog, on = True)
         self.setMinimumSize(360, 540)
         self.setMaximumSize(600, 600)
         self.root_layout = QVBoxLayout(self)
