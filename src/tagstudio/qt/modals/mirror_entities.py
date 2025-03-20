@@ -27,7 +27,7 @@ class MirrorEntriesModal(QWidget):
         self.driver = driver
         self.setWindowTitle(Translations["entries.mirror.window_title"])
         self.setWindowModality(Qt.WindowModality.ApplicationModal)
-        self.setWindowFlag(Qt.Dialog, on = True) # type: ignore
+        self.setWindowFlag(Qt.Dialog, on=True)  # type: ignore
         self.setMinimumSize(500, 400)
         self.root_layout = QVBoxLayout(self)
         self.root_layout.setContentsMargins(6, 6, 6, 6)

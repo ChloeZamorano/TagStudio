@@ -25,7 +25,7 @@ class FfmpegChecker(QMessageBox):
         self.setIcon(QMessageBox.Icon.Warning)
         # Blocks other application interactions until resolved
         self.setWindowModality(Qt.WindowModality.ApplicationModal)
-        self.setWindowFlag(Qt.Dialog, on = True)
+        self.setWindowFlag(Qt.Dialog, on=True)
 
         self.setStandardButtons(
             QMessageBox.StandardButton.Help

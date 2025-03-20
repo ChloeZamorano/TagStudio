@@ -36,7 +36,7 @@ class AddFieldModal(QWidget):
         self.lib = library
         self.setWindowTitle(Translations["library.field.add"])
         self.setWindowModality(Qt.WindowModality.ApplicationModal)
-        self.setWindowFlag(Qt.Dialog, on = True) # type: ignore
+        self.setWindowFlag(Qt.Dialog, on=True)  # type: ignore
         self.setMinimumSize(400, 300)
         self.root_layout = QVBoxLayout(self)
         self.root_layout.setContentsMargins(6, 6, 6, 6)
